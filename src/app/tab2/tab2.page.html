@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cadastro de Clientes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Inputs with labels -->
+  <ion-item>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input [(ngModel)]="cliente.nome" type="text" color="danger" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">E-mail</ion-label>
+    <ion-input [(ngModel)]="cliente.email" type="email" color="danger" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input [(ngModel)]="cliente.pws" type="password" min="6" color="danger" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Confirmar Senha</ion-label>
+    <ion-input [(ngModel)]="confPws" type="password" min="6" color="danger" required></ion-input>
+  </ion-item>
+
+  <ion-button (click)="addCliente(cliente)" [disabled] = "!cliente.nome || ! cliente.email || !cliente.pws || !confPws" color="warning">Salvar</ion-button>
+</ion-content>
