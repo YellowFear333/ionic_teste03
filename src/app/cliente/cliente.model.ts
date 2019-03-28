@@ -17,8 +17,12 @@ export class Cliente {
       }
       if (this.pws == ""){
           erros += "Senha em branco. <br>";
-      }else if (this.pws != confpws){
-          erros += "Senhas diferentes. <br>"
+        }else if (this.pws.length <5){
+            erros += "Senhas muito curta. <br>";
+        }else if (this.pws.length >16){
+            erros += "Senhas muito longa. <br>";
+        }else if (this.pws != confpws){
+            erros += "Senhas diferentes. <br>";
       }
       
       if(erros != "")

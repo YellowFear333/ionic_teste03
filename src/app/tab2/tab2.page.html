@@ -1,32 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
+    <ion-title color="light">
       Cadastro de Clientes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- Inputs with labels -->
+  <form #fc = "ngForm" (ngSubit)="formDados(fc)">
   <ion-item>
     <ion-label position="floating">Nome</ion-label>
-    <ion-input [(ngModel)]="cliente.nome" type="text" color="danger" required></ion-input>
+    <ion-input [(ngModel)]="cliente.nome" name="nome" type="text" color="light" required ></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">E-mail</ion-label>
-    <ion-input [(ngModel)]="cliente.email" type="email" color="danger" required></ion-input>
+    <ion-input [(ngModel)]="cliente.email" name="email" type="email" color="light" required email></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Senha</ion-label>
-    <ion-input [(ngModel)]="cliente.pws" type="password" min="6" color="danger" required></ion-input>
+    <ion-input [(ngModel)]="cliente.pws" name="pws" type="password" color="light" required minlength="6" #pws="ngModel"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Confirmar Senha</ion-label>
-    <ion-input [(ngModel)]="confPws" type="password" min="6" color="danger" required></ion-input>
+    <ion-input [(ngModel)]="confPws" name="confPws" type="password" color="light" required minlength="6" #conf="ngModel"></ion-input>
   </ion-item>
 
-  <ion-button (click)="addCliente(cliente)" [disabled] = "!cliente.nome || ! cliente.email || !cliente.pws || !confPws" color="warning">Salvar</ion-button>
+    <span *ngIf="pws.value != conf.value">Senhas diferentes</span>
+
+  <ion-button type="submit" [disabled] = "!fc.valid" color="danger">Salvar</ion-button>
+  <ion-button type="reset" color="danger">Cancelar</ion-button>
+</form>
 </ion-content>
+
