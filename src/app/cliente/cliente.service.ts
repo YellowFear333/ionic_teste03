@@ -6,9 +6,10 @@ import { Cliente } from './cliente.model';
 })
 export class ClienteService {
   clientes:Cliente[];
+  cliente: Cliente;
 
   constructor() {
-    this.clientes = []
+    this.clientes = [];
   }
 
 
@@ -19,5 +20,16 @@ export class ClienteService {
     getClientes(){
       return this.clientes;
     }
+
+    remove(cliente:Cliente):void{
+      let p = this.clientes.indexOf(cliente);
+      this.clientes.splice(p,1);
+    }
+
+    atualizar(cliente: Cliente): void {
+      this.cliente = cliente;
+      console.log(this.cliente);
+    }
+
    }
 

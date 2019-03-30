@@ -38,7 +38,7 @@ export class Tab2Page {
       this.confPws = "";
 
 
-      this.presentAlert("Aviso", "Cadastrado", "Success");
+      this.presentAlert("Ebaaaa!", "Cadastro efetuado com Sucesso!", "Success");
       return true;
      
     } catch (erros) {

@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <form #fc = "ngForm" (ngSubit)="formDados(fc)">
+  <form #fc="ngForm" (ngSubmit)="formDados(fc)">
   <ion-item>
     <ion-label position="floating">Nome</ion-label>
     <ion-input [(ngModel)]="cliente.nome" name="nome" type="text" color="light" required ></ion-input>
@@ -28,7 +28,10 @@
     <ion-input [(ngModel)]="confPws" name="confPws" type="password" color="light" required minlength="6" #conf="ngModel"></ion-input>
   </ion-item>
 
-    <span *ngIf="pws.value != conf.value">Senhas diferentes</span>
+ 
+    <ion-note color="danger" item-end>
+      <p *ngIf="pws.value != conf.value"> Senhas diferentes </p>
+    </ion-note>
 
   <ion-button type="submit" [disabled] = "!fc.valid" color="danger">Salvar</ion-button>
   <ion-button type="reset" color="danger">Cancelar</ion-button>
