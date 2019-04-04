@@ -1,15 +1,14 @@
-import { Cliente } from './../cliente/cliente.model';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Cliente } from './../cliente.model';
 import { AlertController } from '@ionic/angular';
-import { ClienteService } from '../cliente/cliente.service';
+import { ClienteService } from '../cliente.service';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-add',
+  templateUrl: './add.page.html',
+  styleUrls: ['./add.page.scss'],
 })
-
-export class Tab2Page {
+export class AddPage implements OnInit {
   cliente: Cliente;
   confPws: string;
 
@@ -65,4 +64,3 @@ export class Tab2Page {
 
 
 }
-

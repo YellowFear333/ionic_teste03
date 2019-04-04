@@ -11,20 +11,8 @@
       "id": 2,
       "nome": "Pedro Cardoso",
       "email": "pc@email.com",
-      "pws": "222222",
+      "pws": "000000",
       "ativo": true
-    },
-    {
-      "nome": "Aureo",
-      "email": "aureo01@hotmail.com",
-      "pws": "654321",
-      "id": 3
-    },
-    {
-      "nome": "Mateus",
-      "email": "mateus03@hotmail.com",
-      "pws": "123456",
-      "id": 4
     }
   ]
 }

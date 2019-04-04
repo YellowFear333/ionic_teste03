@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class ClienteService {
   clientes: Cliente[];
 
-  private urlCliente = URL_API + "clientes";
+  private urlCliente: string = URL_API + "clientes";
 
   constructor(
     private http:HttpClient
@@ -20,7 +20,7 @@ export class ClienteService {
     this.clientes = [];
   }
 
-  addCliente(cliente: Cliente):Observable<Cliente> {
+  addCliente(cliente: Cliente): Observable<Cliente> {
     //this.clientes.push(cliente);
     return this.http.post<Cliente>(this.urlCliente, cliente);
   }
@@ -28,6 +28,15 @@ export class ClienteService {
   getClientes():Observable<Cliente[]> {
     //return this.clientes;
     return this.http.get<Cliente[]>(this.urlCliente);
+  }
+
+  getCliente(id: number) {
+    //return this.clientes;
+    return this.http.get<Cliente>(this.urlCliente + "/" + id);
+  }
+
+  updateCliente(cliente: Cliente, id:number){
+    return this.http.put<Cliente>(this.urlCliente + "/" + id, cliente);
   }
 
   deleteCliente(cliente: Cliente) {

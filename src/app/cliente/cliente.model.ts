@@ -3,6 +3,6 @@ export class Cliente {
     nome: string;
     email: string;
     pws: string;
-    ativo:boolean;
+    ativo: boolean = true;
 
 }

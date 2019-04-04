@@ -21,7 +21,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../cliente/add/add.module#AddPageModule'
+          },
+          {
+            path: ':id',
+            loadChildren: '../cliente/edit/edit.module#EditPageModule'
           }
         ]
       },
@@ -30,7 +34,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../cliente/list/list.module#ListPageModule'
           }
         ]
       },
